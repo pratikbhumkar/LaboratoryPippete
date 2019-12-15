@@ -3,8 +3,14 @@ using System.Collections.Generic;
 
 namespace LaboratoryPipette.Entities
 {
+    /*
+    Entity representing the plate.
+    */
     public class Plate
     {
+        /*
+        Constructor to create the plate.
+        */
         public Plate(int length, int breadth)
         {
             for (int i = 0; i < length; i++)
@@ -22,6 +28,9 @@ namespace LaboratoryPipette.Entities
                 LabPlate.Add(row);
             }
         }
+        /*
+        2 Dimentional array storing the plate.
+        */
         public List<List<Well>> LabPlate = new List<List<Well>>();
     }
 }

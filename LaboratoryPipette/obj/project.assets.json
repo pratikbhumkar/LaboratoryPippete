@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\LaboratoryPipette\\LaboratoryPipette\\LaboratoryPipette.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\LaboratoryPippete\\LaboratoryPipette\\LaboratoryPipette.csproj",
       "projectName": "LaboratoryPipette",
-      "projectPath": "C:\\Users\\user\\source\\repos\\LaboratoryPipette\\LaboratoryPipette\\LaboratoryPipette.csproj",
+      "projectPath": "C:\\Users\\user\\source\\repos\\LaboratoryPippete\\LaboratoryPipette\\LaboratoryPipette.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\LaboratoryPipette\\LaboratoryPipette\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\repos\\LaboratoryPippete\\LaboratoryPipette\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
