@@ -11,10 +11,10 @@ namespace LaboratoryPipette.Modules
     public class RoboticArm
     {
         //Current position representing the well over which the arm is pointing.
-        Well currentPosition = new Well();
-        Plate plate = null;
-        private int x;
-        private int y;
+        public Well currentPosition = new Well();
+        Plate plate = new Plate();
+        private int currentX;
+        private int currentY;
         public RoboticArm(Plate _plate)
         {
             plate = _plate; //Assigning the plate.
@@ -22,33 +22,38 @@ namespace LaboratoryPipette.Modules
             currentPosition.Y = 0; //setting it to 1,1
         }
         //Mapping x and y co-ordinates to the actual array positions.
-        public void ManipulatePosition(int _x,int _y)
+        public string ManipulatePosition(int _x,int _y)
         {
-            x = 5 - _x;
-            y = _y - 1;
+            this.currentX = 5 - _x;
+            this.currentY = _y - 1;
+            string outcome=""+ this.currentX + ","+ currentY;
+            return outcome;
         }
         /*
         Place command. Takes in the x,y cordinates and places the robotic arm over the well.
         */
-        public void Place(int x, int y)
+        public Well Place(int x, int y)
         {
             if (x<=5 && x>=1 && y<=5 && y>=1) //Check for validity.
             {
-                ManipulatePosition(x, y); 
-                currentPosition = plate.LabPlate[this.x][this.y];
+                ManipulatePosition(x, y);
+                Well well = new Well();
+                well = plate.LabPlate[this.currentX][this.currentY];
+                currentPosition = well;
             }
             else//If invalid throw exception
             {
                 throw new IndexOutOfRangeException();
             }
-
+            return currentPosition;
         }
         /*
         Drop command drops the liquid into the well.
         */
-        public void Drop()
+        public bool Drop()
         {
-            currentPosition.Content = true;
+            currentPosition.Content=true;
+            return currentPosition.Content;
         }
         /*
         Detect command Detects the liquid's status for the current well.
@@ -65,13 +70,15 @@ namespace LaboratoryPipette.Modules
         {
             if ( currentPosition.X > 0) //Check for validity.
             {
-                currentPosition.X -= 1;
+                int xpos = currentPosition.X;
+                int ypos = currentPosition.Y;
+                xpos = xpos - 1;
+                currentPosition = plate.LabPlate[xpos][ypos];
             }
             else//If invalid throw exception
             {
                 throw new IndexOutOfRangeException();
             }
-            
         }
         /*
         MoveSouth command moves the robotic arm one step in downward direction.
@@ -80,7 +87,11 @@ namespace LaboratoryPipette.Modules
         {
             if (currentPosition.X < 4) //Check for validity.
             {
-                currentPosition.X += 1;
+                int xpos = currentPosition.X;
+                int ypos = currentPosition.Y;
+
+                xpos += 1;
+                currentPosition = plate.LabPlate[xpos][ypos];
             }
             else//If invalid throw exception
             {
@@ -94,7 +105,11 @@ namespace LaboratoryPipette.Modules
         {
             if (currentPosition.Y < 4) //Check for validity.
             {
-                currentPosition.Y += 1;
+                int xpos = currentPosition.X;
+                int ypos = currentPosition.Y;
+
+                ypos += 1;
+                currentPosition = plate.LabPlate[xpos][ypos];
             }
             else//If invalid throw exception
             {
@@ -106,9 +121,13 @@ namespace LaboratoryPipette.Modules
         */
         public void MoveWest()
         {
-            if (currentPosition.Y > 1) //Check for validity.
+            if (currentPosition.Y > 0) //Check for validity.
             {
-                currentPosition.Y -= 1;
+                int xpos = currentPosition.X;
+                int ypos = currentPosition.Y;
+
+                ypos -= 1;
+                currentPosition = plate.LabPlate[xpos][ypos];
             }
             else//If invalid throw exception
             {
@@ -123,7 +142,7 @@ namespace LaboratoryPipette.Modules
         {
             int xvalue = 5-currentPosition.X;
             int yvalue = currentPosition.Y+1;
-            return "" + xvalue + " " + yvalue + " " + Detect();
+            return "" + xvalue + "," + yvalue + "," + Detect();
         }
     }
 }

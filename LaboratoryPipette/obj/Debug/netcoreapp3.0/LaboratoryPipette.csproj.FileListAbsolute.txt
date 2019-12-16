@@ -15,7 +15,6 @@ C:\Users\user\source\repos\LaboratoryPippete\LaboratoryPipette\bin\Debug\netcore
 C:\Users\user\source\repos\LaboratoryPippete\LaboratoryPipette\bin\Debug\netcoreapp3.0\LaboratoryPipette.runtimeconfig.dev.json
 C:\Users\user\source\repos\LaboratoryPippete\LaboratoryPipette\bin\Debug\netcoreapp3.0\LaboratoryPipette.dll
 C:\Users\user\source\repos\LaboratoryPippete\LaboratoryPipette\bin\Debug\netcoreapp3.0\LaboratoryPipette.pdb
-C:\Users\user\source\repos\LaboratoryPippete\LaboratoryPipette\obj\Debug\netcoreapp3.0\LaboratoryPipette.csprojAssemblyReference.cache
 C:\Users\user\source\repos\LaboratoryPippete\LaboratoryPipette\obj\Debug\netcoreapp3.0\LaboratoryPipette.AssemblyInfoInputs.cache
 C:\Users\user\source\repos\LaboratoryPippete\LaboratoryPipette\obj\Debug\netcoreapp3.0\LaboratoryPipette.AssemblyInfo.cs
 C:\Users\user\source\repos\LaboratoryPippete\LaboratoryPipette\obj\Debug\netcoreapp3.0\LaboratoryPipette.dll

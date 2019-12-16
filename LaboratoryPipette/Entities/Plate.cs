@@ -8,6 +8,10 @@ namespace LaboratoryPipette.Entities
     */
     public class Plate
     {
+        public Plate()
+        {
+
+        }
         /*
         Constructor to create the plate.
         */
