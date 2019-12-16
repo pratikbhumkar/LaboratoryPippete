@@ -85,7 +85,7 @@ namespace LabPippete.UnitTests
         {
             Plate plate = new Plate(5, 5);
             RoboticArm arm = new RoboticArm(plate);
-            var outcome = arm.Place(1, 1);
+            arm.Place(1, 1);
             var report = arm.Report();
             Assert.AreEqual(report, "1,1,EMPTY");
         }
@@ -164,7 +164,7 @@ namespace LabPippete.UnitTests
         /*
          * This method tests the ability of the arm to detect overflow in northern direction.
          * Checks if the Move N command can handle the fall.
-         * 
+         * Moves 4 times in the desired direction and then raises an error to prevent fall.
          */
         [TestMethod]
         public void Test_Fall_North()
@@ -182,7 +182,7 @@ namespace LabPippete.UnitTests
         /*
          * This method tests the ability of the arm to detect overflow in Southern direction.
          * Checks if the Move S command can handle the fall.
-         * 
+         * Moves 4 times in the desired direction and then raises an error to prevent fall.
          */
         [TestMethod]
         public void Test_Fall_South()
@@ -200,7 +200,7 @@ namespace LabPippete.UnitTests
         /*
          * This method tests the ability of the arm to detect overflow in westward direction.
          * Checks if the Move W command can handle the fall.
-         * 
+         * Moves 4 times in the desired direction and then raises an error to prevent fall.
          */
         [TestMethod]
         public void Test_Fall_West()
@@ -218,7 +218,7 @@ namespace LabPippete.UnitTests
         /*
          * This method tests the ability of the arm to detect overflow in Eastern direction.
          * Checks if the Move E command can handle the fall.
-         * 
+         * Moves 4 times in the desired direction and then raises an error to prevent fall.
          */
         [TestMethod]
         public void Test_Fall_East()
